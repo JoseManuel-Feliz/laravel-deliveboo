@@ -5,13 +5,21 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder {
+class DatabaseSeeder extends Seeder
+{
     /**
      * Seed the application's database.
      */
-    public function run() : void {
-        $this->call([
-            DishSeeder::class
-        ]);
+    public function run(): void
+    {
+        $this->call(
+            [
+            TypeSeeder::class,
+            UserSeeder::class,
+            RestaurantSeeder::class,
+            DishSeeder::class,
+            RestaurantTypeSeeder::class
+            ]
+        );
     }
 }

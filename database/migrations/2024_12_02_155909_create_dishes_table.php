@@ -8,13 +8,14 @@ return new class extends Migration {
     /**
      * Run the migrations.
      */
-    public function up() : void {
+    public function up(): void
+    {
         Schema::create('dishes', function (Blueprint $table) {
             $table->id();
             $table->string('name', length: 250)->nullable(false);
             $table->text('description')->nullable(true);
-            $table->decimal('price', total: 5, places: 2)->default(0)->nullable(false);
-            $table->boolean('is_visible')->default(true)->nullable(false);
+            $table->decimal('price', total: 5, places: 2)->nullable(false);
+            $table->boolean('is_visible')->nullable(false);
             $table->text('img')->nullable(true);
             $table->timestamps();
         });
@@ -23,7 +24,8 @@ return new class extends Migration {
     /**
      * Reverse the migrations.
      */
-    public function down() : void {
+    public function down(): void
+    {
         Schema::dropIfExists('dishes');
     }
 };
